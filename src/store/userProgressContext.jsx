@@ -33,7 +33,7 @@ export function UserProgressContextProvider({children}) {
    }
 
     return (
-        <UserProgressContext.Provider value={userProgress}>{children}</UserProgressContext.Provider>
+        <UserProgressContext.Provider value={userProgressCtx}>{children}</UserProgressContext.Provider>
     )
 }
 
