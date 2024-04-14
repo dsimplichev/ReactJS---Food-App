@@ -21,7 +21,18 @@ export default function Checkout() {
       const fd = new FormData(event,target)
       const customerData = Object.fromEntries(fd.entries())
     
-      
+      fetch('http://localhost:3000/orders', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            order: {
+                items: cartCtx.items,
+                customer: customerData
+            }
+        })
+      })
     }
    
    return (
@@ -34,7 +45,7 @@ export default function Checkout() {
                 <p>Total Amount: {currencyFormatter.format(cartTotal)}</p>
             </form>
 
-            <Input label="Full Name" type="text" />
+            <Input label="Full Name" type="text" id="name" />
             <Input label="Email" type="email" id="email" />
             <Input label="Street" type="text" id="street" />
             <div className="control-row">
