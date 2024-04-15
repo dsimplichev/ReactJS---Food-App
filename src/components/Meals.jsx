@@ -13,7 +13,7 @@ export default function Meals() {
    
     if(isLoading) {
         return (
-            <p>Fetching meals...</p>
+            <p className="center">Fetching meals...</p>
         )
     }
 
