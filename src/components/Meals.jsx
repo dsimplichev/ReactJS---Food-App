@@ -17,6 +17,12 @@ export default function Meals() {
         )
     }
 
+    if(error) {
+        return (
+            <Error title="Failed to fetch meals" message={error} />
+        )
+    }
+
     // if(!data) {
     //     return (
     //         <p></p>
